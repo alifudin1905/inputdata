@@ -1,1 +1,47 @@
-hello
+<?php
+// Redirect ke lokasi baru
+header('Location: pages/index.php');
+exit;
+        $row = $stmt->fetch();
+        $total_tunai = $row['total_tunai'] ?? 0;
+        $total_transfer = $row['total_transfer'] ?? 0;
+
+        // Ambil total pengeluaran dari tabel pengeluaran
+        $stmt2 = $pdo->query("SELECT SUM(nominal) as total_pengeluaran FROM pengeluaran");
+        $row2 = $stmt2->fetch();
+        $total_pengeluaran = $row2['total_pengeluaran'] ?? 0;
+
+        // Hitung selisih tunai - pengeluaran
+        $saldo_akhir = $total_tunai - $total_pengeluaran;
+        ?>
+        <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Rekap Kas</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <div class="container">
+                <header>
+                    <h1>Rekap Kas</h1>
+                </header>
+                <div class="card">
+                    <p>Total Bayar Tunai: <b>Rp <?= number_format($total_tunai, 0, ',', '.') ?></b></p>
+                    <p>Total Bayar Transfer: <b>Rp <?= number_format($total_transfer, 0, ',', '.') ?></b></p>
+                    <p>Total Pengeluaran: <b>Rp <?= number_format($total_pengeluaran, 0, ',', '.') ?></b></p>
+                    <hr>
+                    <h2>Saldo Akhir (Tunai - Pengeluaran): <span style="color:green">Rp <?= number_format($saldo_akhir, 0, ',', '.') ?></span></h2>
+                </div>
+                <div class="nav-links">
+                    <a href="index.php">Dashboard</a>
+                    <a href="jual.php">Penjualan</a>
+                    <a href="pengeluaran.php">Pengeluaran</a>
+                    <a href="laporan.php">Laporan</a>
+                    <a href="karyawan.php">Karyawan</a>
+                </div>
+            </div>
+        </body>
+
+        </html>
