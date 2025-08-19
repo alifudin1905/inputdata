@@ -22,6 +22,8 @@
                     <a href="../pages/laporan_jual_detail.php">Laporan Jual Detail</a>
                     <a href="../pages/laporan_pembelian.php">Laporan Pembelian</a>
                     <a href="../pages/laporan_barang_masuk.php">Laporan Barang Masuk</a>
+                    <!-- Tambahkan menu baru untuk Laporan Pengeluaran -->
+                    <a href="../pages/laporan_pengeluaran.php">Laporan Pengeluaran</a>
                 </div>
             </div>
             <a href="../pages/karyawan.php">Karyawan</a>

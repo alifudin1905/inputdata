@@ -76,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Tanggal:
                 <input type="date" name="tanggal" value="<?= htmlspecialchars($_POST['tanggal'] ?? date('Y-m-d')) ?>" required>
             </label>
-            <label>Keterangan:
+            <!-- <label>Keterangan:
                 <input type="text" name="keterangan" value="<?= htmlspecialchars($_POST['keterangan'] ?? '') ?>">
-            </label>
+            </label> -->
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>

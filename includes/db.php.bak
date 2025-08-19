@@ -5,8 +5,8 @@ $db_config = [
     'host' => '127.0.0.1', // Gunakan IP sebagai ganti localhost
     'port' => '3306',      // Port default MySQL
     'dbname' => 'laporan_harian',
-    'username' => 'admin',
-    'password' => 'admin'       // Kosongkan jika tidak ada password
+    'username' => 'root',
+    'password' => ''       // Kosongkan jika tidak ada password
 ];
 
 try {

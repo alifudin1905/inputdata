@@ -237,5 +237,5 @@ if (count($pengeluaran_list) > 0) {
 	pageUp.style.display = 'none';
 	pageDown.style.display = 'block';
 </script>
-echo "</div>"; // close .container
+</div>
 <?php include '../includes/footer.php'; ?>
